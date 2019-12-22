@@ -1,13 +1,16 @@
 const { src, dest, parallel, series, watch } = require('gulp');
 
-const jade = require('gulp-jade');
+const gulpPug = require('gulp-pug');
 
-function jadeToHTML(){
-    return src("./jade/**/*.jade")
-      .pipe(jade())
+function pugToHTML(){
+    return src("./pug/**/*.pug")
+      .pipe(gulpPug({
+        pretty: true
+      }))
       .pipe(dest('./'))
   }
 
 exports.default = function() {
-    watch('./jade/**/*.jade').on('change', jadeToHTML)
-  };
+  pugToHTML()
+  watch('./pug/**/*.pug').on('change', pugToHTML)
+};
