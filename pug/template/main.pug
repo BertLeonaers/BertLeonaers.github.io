@@ -3,11 +3,20 @@ html
   head
     title Laurelle
     link(rel='stylesheet', href='/css/main.css')
+    script(src='/js/main.js')
   body
-    nav 
+    .menuBar
+      h1 Laurelle
+      .menuIcon(onclick="myFunction(this)")
+        .bar1
+        .bar2
+        .bar3
+      nav.navigation
         ul
-            li Home
-            li Nagels
-            li Wimpers
-            li Contact
+          li home
+          li home
+          li home
+          li home
+          li home
+          li home
     block content
