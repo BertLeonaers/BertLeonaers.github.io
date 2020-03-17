@@ -1,0 +1,89 @@
+
+.gelish-image
+        width: 300px
+        height: 300px
+        border: 2px solid #000000
+        box-shadow: 10px 10px 5px #555
+        border-radius: 25px
+        background-image: url("./pictures/gelish-logo.png")
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        margin: 50px auto
+
+.polygel-image
+        width: 300px
+        height: 300px
+        border: 2px solid #000000
+        box-shadow: 10px 10px 5px #555
+        border-radius: 25px
+        background-image: url("./pictures/polygel-logo.png")
+        background-repeat: no-repeat
+        background-position: center
+        margin: 50px auto
+        padding: 10px
+
+.gelish-image-image
+    width: 100%
+
+.section.nail
+    // Colors
+    $bg-color: #1370FB
+    $dot-color: #3882E8
+
+    // Dimensions
+    $dot-size: 2px
+    $dot-space: 22px
+
+    background: linear-gradient(90deg, $bg-color calc(#{$dot-space} - #{$dot-size}), transparent 1%) center,linear-gradient($bg-color calc(#{$dot-space} - #{$dot-size}), transparent 1%) center,$dot-color
+    background-size: $dot-space $dot-space
+
+.section.wimpers
+    background: radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0
+    background-color: slategray
+    background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px
+
+.section.wimpers.center, .section.nails
+        text-align: center
+        .content
+            background-color: rgba(255, 255, 255, 0.3) 
+            padding: 20px 50px
+
+.nails
+    background-image: url("./pictures/nails.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+
+.section-nails
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    width: 100%
+    max-width: 1000px
+    margin: auto
+    .col
+        margin: auto
+        padding: 50px
+        flex: 50%
+    .col-25
+        flex: 25%
+    .col-75
+        flex: 75%
+    .nails-image
+        width: 300px
+        height: 300px
+        border: 2px solid #000000
+        box-shadow: 10px 10px 5px #555
+        border-radius: 25px
+        background-image: url("./pictures/nails-black.jpeg")
+        background-size: cover
+        margin: 50px auto
+    .nails-description
+        margin: 50px 0
+        text-align: center
+        h1 
+            text-align: center
+            font-family: 'Great Vibes', cursive
+            color: rgba(163,93,64,1)

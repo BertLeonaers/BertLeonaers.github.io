@@ -2,8 +2,11 @@
 html
   head
     title Laurelle
-    link(rel='stylesheet', href='/css/main.css')
-    script(src='/js/main.js')
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    link(rel='stylesheet', href='./css/main.css')
+    link(href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap",rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:300&display=swap",rel="stylesheet")
+    script(src='./js/main.js')
   body
     .menuBar
       h1 Laurelle
@@ -13,8 +16,10 @@ html
         .bar3
       nav.navigation
         ul
-          li home
-          li home
+          li
+            a(href="./") Home
+          li
+            a(href="./nagels.html") Nagels
           li home
           li home
           li home

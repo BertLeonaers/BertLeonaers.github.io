@@ -6,6 +6,8 @@ const browserSync = require('browser-sync').create();
 
 const sass        = require('gulp-sass');
 
+const autoprefixer = require('gulp-autoprefixer');
+
 function pugToHTML(){
   return src("./pug/**/*.pug")
     .pipe(gulpPug({
@@ -16,8 +18,11 @@ function pugToHTML(){
 }
 
 function sassToCss(){
-  return src("./pug/sass/*.sass")
+  return src("./pug/sass/main.sass")
     .pipe(sass())
+    .pipe(autoprefixer({
+        cascade: false
+      }))
     .pipe(dest('css'))
     .pipe(browserSync.stream())
 }
