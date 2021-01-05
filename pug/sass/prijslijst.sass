@@ -1,0 +1,33 @@
+.prijslijst
+    .section
+        width: 80%
+        margin: 10px auto
+        border: 5px solid $main_color
+        &:first-of-type
+            margin-top: 0px
+        &:last-of-type
+            margin-bottom: 30px
+        @include md
+            width: 60%
+            justify-content: space-around
+
+        .heading
+            color: $main_color
+            text-align: center
+            h1
+                font-family: $title_font
+                position: relative
+                text-decoration: underline
+                .price
+                    text-decoration: underline
+        p
+            position: relative
+            font-family: $explanation_font
+            color: $main_color
+        
+        .price
+            position: absolute
+            right: 0px
+        .product
+            .subproduct
+                padding-left: 40px

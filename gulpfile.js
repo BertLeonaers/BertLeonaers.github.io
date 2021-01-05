@@ -8,13 +8,15 @@ const sass        = require('gulp-sass');
 
 const autoprefixer = require('gulp-autoprefixer');
 
+var del = require('del');
+
 function pugToHTML(){
   return src("./pug/**/*.pug")
     .pipe(gulpPug({
       pretty: true,
       title: "Laurelle"
     }))
-    .pipe(dest('./'))
+    .pipe(dest('./generated/'))
 }
 
 function sassToCss(){
@@ -23,25 +25,37 @@ function sassToCss(){
     .pipe(autoprefixer({
         cascade: false
       }))
-    .pipe(dest('css'))
+    .pipe(dest('./generated/css'))
     .pipe(browserSync.stream())
 }
 
 function js(){
   return src("./pug/js/*.js")
-    .pipe(dest('js'));
+    .pipe(dest('./generated/js'));
+}
+
+function pictures(){
+  return src("./pug/pictures/*")
+    .pipe(dest('./generated/pictures'));
+}
+
+function deleteGenerated(){
+  return del.sync("./generated");
 }
 
 exports.default = function() {
+  //deleteGenerated();
   sassToCss();
   pugToHTML();
   js();
+  pictures();
   browserSync.init({
     server: {
-      baseDir: '.'
+      baseDir: './generated'
     }
   })
   watch('./pug/**/*.pug').on('change', series(pugToHTML, browserSync.reload))
   watch('./pug/sass/*.sass').on('change', sassToCss, browserSync.reload)
   watch('./pug/js/*.js').on('change', js, browserSync.reload)
+  watch('./pug/pictures/**/*').on('change', pictures, browserSync.reload)
 };

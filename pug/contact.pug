@@ -1,0 +1,56 @@
+//- page-a.pug
+extends template/main.pug
+
+block content
+    .section
+        .pageExplanation
+            .pageExplanationTitle Contact
+            p.pageExplanationText
+                |Ben je geïnteresseerd in mijn producten?
+                |Hieronder kan je alle gegevens vinden om mij te bereiken. Tot gauw!
+
+    .section
+        .splitHorizontal
+            .left
+                h1 Contactgegevens
+                .info
+                    include icons/icon_phone.pug
+                    span 0471/11.73.79
+                .info
+                    include icons/icon_envelope.pug
+                    span laurencedeckers@msn.com
+                .info
+                    include icons/icon_facebook.pug
+                    span 
+                        a(href="https://www.facebook.com/Laurelle-106616221018615") Laurelle
+                .info
+                    include icons/icon_instagram.pug
+                    span 
+                        a(href="https://www.instagram.com/laurelle_nailsandlashes") /laurelle_nailsandlashes
+            .right
+                .officeHours
+                    h1 Openingsuren
+                    table
+                        tr
+                            td Maandag
+                            td Op afspraak
+                        tr
+                            td Dinsdag
+                            td Op afspraak
+                        tr
+                            td Woensdag
+                            td Op afspraak
+                        tr
+                            td Donderdag
+                            td Op afspraak
+                        tr
+                            td Vrijdag
+                            td Op afspraak
+                        tr
+                            td Zaterdag
+                            td Gesloten
+                        tr
+                            td Zondag
+                            td Gesloten
+
+    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124138.20594655247!2d4.776721840167076!3d51.07665821471252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c15a9008eb729d%3A0x661dd5cc4f315632!2sGrote%20Heibergstraat%2012%2C%202235%20Hulshout!5e0!3m2!1snl!2sbe!4v1580057986670!5m2!1snl!2sbe" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="")

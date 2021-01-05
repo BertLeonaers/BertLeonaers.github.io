@@ -1,28 +1,38 @@
 .menuBar
     position: sticky
     top: 0px
-    height: 60px
-    background-color: #FCE0D9
+    height: 5em
+    background-color: $main_color
     display: flex
     align-items: center
     justify-content: center
     z-index: 1
-    color: rgba(250,189,64,1)
+    color: $accent_color_dark
     margin-bottom: 30px
+    h1
+        font-family: $title_font
+        font-size: 3em
+        @include md
+            margin: 7px
     
     .menuIcon
+        @include md
+            display: none
         position: absolute
         right: 20px
         display: inline-block
         cursor: pointer
         z-index: 2
-        .bar1, .bar2, .bar3 
+        .bar1, .bar2, .bar3
+            transition: background-color 0.5s ease
             width: 35px
             height: 5px
-            background-color: #333
+            background-color: $accent_color_dark
             margin: 6px 0
             transition: 0.4s
-    .change 
+    .change
+        .bar1, .bar2, .bar3
+            background-color: $main_color
         .bar1
             transform: rotate(-45deg) translate(-8px, 7px)
         .bar2 
@@ -30,28 +40,50 @@
         .bar3 
             transform: rotate(45deg) translate(-8px, -8px)
 .navigation.change
-        width: 250px
-        transition: width 0.5s ease 0s
-        height: 100%
+        width: 150px
+        @include sm
+            width: 200px
+        border-left: 1px solid black
+        border-bottom: 1px solid black
 .navigation
     position: fixed
     right: 0px
     top: 0px
-    background-color: white
-    padding-top: 80px
+    background-color: $accent_color
+    padding: 80px 0px
     width: 0px
-    height: 10px
+    overflow: hidden
+    height: auto
     z-index: 1
-    border-left: 1px solid black
-    transition: width 0.5s ease 0s, height 0s ease 2s
+    border-left: 0px solid black
+    border-bottom: 0px solid black
+    transition: width 0.5s ease 0s, height 0s ease 2s, border 0.5s ease 0s
+    //transition: all 0.5 ease 0s
+    font-family: $explanation_font
+    font-size: 15px
+    font-weight: bold
+    @include md
+        font-size: 18px
+        width: fit-content
+        padding: 0px
+        position: static
+        background-color: transparent
     ul
         margin: 0px
     li
         list-style-type: none
         padding: 2px
+        @include md
+            float: left
     a
         text-decoration: none
-        color: inherit
+        color: $main_color
         &:hover 
             text-decoration: underline
-            color: rgba(163,93,64,1)
+            color: $accent_color_dark
+        @include md
+            display: block
+            color: white
+            text-align: center
+            padding: 16px
+            text-decoration: none

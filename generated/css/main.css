@@ -308,26 +308,38 @@ template {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  height: 60px;
-  background-color: #FCE0D9;
+  height: 5em;
+  background-color: #f47984;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  color: #fabd40;
+  color: #545454;
   margin-bottom: 30px; }
+  .menuBar h1 {
+    font-family: "Satisfy", cursive;
+    font-size: 3em; }
+    @media (min-width: 768px) {
+      .menuBar h1 {
+        margin: 7px; } }
   .menuBar .menuIcon {
     position: absolute;
     right: 20px;
     display: inline-block;
     cursor: pointer;
     z-index: 2; }
+    @media (min-width: 768px) {
+      .menuBar .menuIcon {
+        display: none; } }
     .menuBar .menuIcon .bar1, .menuBar .menuIcon .bar2, .menuBar .menuIcon .bar3 {
+      transition: background-color 0.5s ease;
       width: 35px;
       height: 5px;
-      background-color: #333;
+      background-color: #545454;
       margin: 6px 0;
       transition: 0.4s; }
+  .menuBar .change .bar1, .menuBar .change .bar2, .menuBar .change .bar3 {
+    background-color: #f47984; }
   .menuBar .change .bar1 {
     transform: rotate(-45deg) translate(-8px, 7px); }
   .menuBar .change .bar2 {
@@ -336,35 +348,111 @@ template {
     transform: rotate(45deg) translate(-8px, -8px); }
 
 .navigation.change {
-  width: 250px;
-  transition: width 0.5s ease 0s;
-  height: 100%; }
+  width: 150px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black; }
+  @media (min-width: 576px) {
+    .navigation.change {
+      width: 200px; } }
 
 .navigation {
   position: fixed;
   right: 0px;
   top: 0px;
-  background-color: white;
-  padding-top: 80px;
+  background-color: #ffe6e8;
+  padding: 80px 0px;
   width: 0px;
-  height: 10px;
+  overflow: hidden;
+  height: auto;
   z-index: 1;
-  border-left: 1px solid black;
-  transition: width 0.5s ease 0s, height 0s ease 2s; }
+  border-left: 0px solid black;
+  border-bottom: 0px solid black;
+  transition: width 0.5s ease 0s, height 0s ease 2s, border 0.5s ease 0s;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: bold; }
+  @media (min-width: 768px) {
+    .navigation {
+      font-size: 18px;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding: 0px;
+      position: static;
+      background-color: transparent; } }
   .navigation ul {
     margin: 0px; }
   .navigation li {
     list-style-type: none;
     padding: 2px; }
+    @media (min-width: 768px) {
+      .navigation li {
+        float: left; } }
   .navigation a {
     text-decoration: none;
-    color: inherit; }
+    color: #f47984; }
     .navigation a:hover {
       text-decoration: underline;
-      color: #a35d40; }
+      color: #545454; }
+    @media (min-width: 768px) {
+      .navigation a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none; } }
+
+footer {
+  background-color: #545454;
+  color: #f47984;
+  padding: 0px;
+  min-height: 100px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+  footer .social, footer .pageIndex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    footer .social a, footer .pageIndex a {
+      margin: 5px; }
+
+.prijslijst .section {
+  width: 80%;
+  margin: 10px auto;
+  border: 5px solid #f47984; }
+  .prijslijst .section:first-of-type {
+    margin-top: 0px; }
+  .prijslijst .section:last-of-type {
+    margin-bottom: 30px; }
+  @media (min-width: 768px) {
+    .prijslijst .section {
+      width: 60%;
+      justify-content: space-around; } }
+  .prijslijst .section .heading {
+    color: #f47984;
+    text-align: center; }
+    .prijslijst .section .heading h1 {
+      font-family: "Satisfy", cursive;
+      position: relative;
+      text-decoration: underline; }
+      .prijslijst .section .heading h1 .price {
+        text-decoration: underline; }
+  .prijslijst .section p {
+    position: relative;
+    font-family: "Lato", sans-serif;
+    color: #f47984; }
+  .prijslijst .section .price {
+    position: absolute;
+    right: 0px; }
+  .prijslijst .section .product .subproduct {
+    padding-left: 40px; }
 
 body {
-  font-size: 15px; }
+  font-size: 15px;
+  background-color: #f6f6f6; }
   @media (min-width: 768px) {
     body {
       font-size: 18px; } }
@@ -378,17 +466,24 @@ a {
   display: flex;
   justify-content: center; }
 
+.home {
+  display: block; }
+  @media (min-width: 768px) {
+    .home {
+      display: flex;
+      justify-content: space-around; } }
+
 .section {
-  background-color: white;
+  background-color: #f6f6f6;
   padding: 0px 30px; }
   @media (min-width: 768px) {
     .section {
       max-width: 768px;
       margin: 0 auto; } }
   .section .pageExplanation {
-    background-color: #FCE0D9;
-    font-family: 'Montserrat';
-    color: #a35d40;
+    background-color: #ffe6e8;
+    font-family: "Lato", sans-serif;
+    color: #545454;
     padding: 15px; }
     .section .pageExplanation .pageExplanationTitle {
       position: relative;
@@ -398,9 +493,9 @@ a {
       width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
-      font-family: 'Great Vibes', cursive;
+      font-family: "Satisfy", cursive;
       font-size: 40px;
-      color: #a35d40; }
+      color: #f47984; }
     .section .pageExplanation .pageExplanationText {
       margin-top: -20px;
       margin-bottom: 0px; }
@@ -419,16 +514,16 @@ a {
         transition: .3s ease-in-out; }
         .section .imageAndExplanation .imageAndExplanationImage a:hover, .section .imageAndExplanationHorizontal .imageAndExplanationImage a:hover, .section .imageAndExplanationHorizontalReverse .imageAndExplanationImage a:hover {
           opacity: .5; }
-    .section .imageAndExplanation .imageAndExplanationExplanation, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation {
-      flex: 1 0 50%; }
-      .section .imageAndExplanation .imageAndExplanationExplanation .imageAndExplanationExplanationTitle h1, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation .imageAndExplanationExplanationTitle h1, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation .imageAndExplanationExplanationTitle h1 {
-        text-align: center;
-        font-family: 'Great Vibes', cursive;
-        color: #a35d40; }
-      .section .imageAndExplanation .imageAndExplanationExplanation .imageAndExplanationExplanationTitle a, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation .imageAndExplanationExplanationTitle a, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation .imageAndExplanationExplanationTitle a {
-        color: inherit; }
+    .section .imageAndExplanation .imageAndExplanationExplanation .imageAndExplanationExplanationTitle h1, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation .imageAndExplanationExplanationTitle h1, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation .imageAndExplanationExplanationTitle h1 {
+      text-align: center;
+      font-family: "Satisfy", cursive;
+      color: #f47984; }
+    .section .imageAndExplanation .imageAndExplanationExplanation .imageAndExplanationExplanationTitle a, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation .imageAndExplanationExplanationTitle a, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation .imageAndExplanationExplanationTitle a {
+      color: inherit; }
   .section .imageAndExplanationHorizontal, .section .imageAndExplanationHorizontalReverse {
     flex-direction: column; }
+    .section .imageAndExplanationHorizontal .imageAndExplanationExplanation, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation {
+      flex: 1 0 50%; }
     .section .imageAndExplanationHorizontal .imageAndExplanationImage, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation, .section .imageAndExplanationHorizontalReverse .imageAndExplanationImage, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation {
       padding: 20px;
       display: flex;
@@ -442,6 +537,50 @@ a {
       flex-direction: row-reverse; } }
   .section .imageAndExplanation {
     flex-direction: column-reverse; }
+  .section .splitHorizontal {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column; }
+    @media (min-width: 576px) {
+      .section .splitHorizontal {
+        flex-direction: row; } }
+    .section .splitHorizontal .left, .section .splitHorizontal .right {
+      margin: auto;
+      width: 100%;
+      max-width: 300px;
+      text-align: center; }
+      .section .splitHorizontal .left h1, .section .splitHorizontal .right h1 {
+        text-align: center;
+        font-family: "Satisfy", cursive;
+        color: #f47984; }
+    .section .splitHorizontal table {
+      width: 100%;
+      text-align: center; }
 
 iframe {
   margin: 30px 0px 0px 0px; }
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.icon {
+  flex: 0 0 auto;
+  padding: 5px;
+  display: block;
+  fill: #000;
+  stroke: #000; }
+  .icon svg {
+    fill: inherit;
+    min-height: var(--size);
+    min-width: var(--size); }
+
+.info {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: start; }
+  .info .icon {
+    width: 25px; }
