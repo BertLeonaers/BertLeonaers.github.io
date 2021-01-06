@@ -71,4 +71,4 @@ function watchFiles(){
   watch('./pug/pictures/**/*').on('change', pictures, browserSync.reload)
 }
 
-exports.default = series(parallel(pugToHTML, sassToCss, js, pictures), generateSitemap, doBrowsersync, watchFiles)
+exports.default = series(parallel(pugToHTML, sassToCss, js, pictures), generateSitemap, parallel(watchFiles, doBrowsersync))
