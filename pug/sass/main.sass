@@ -13,10 +13,12 @@ $accent_color_dark: #545454
 body
     font-size: 15px
     background-color: #f6f6f6
+    padding-bottom: 20px
     @include md
         font-size: 18px
 a
     text-decoration: none
+    color: $main_color
     &:hover
         text-decoration: underline
 .section.center
@@ -105,6 +107,8 @@ a
             flex-direction: row
         .left,.right
             margin: auto
+            @include sm
+                margin: inherit
             width: 100%
             max-width: 300px
             text-align: center
@@ -140,6 +144,13 @@ iframe
     display: flex
     align-items: center
     margin: auto
-    justify-content: start
+    justify-content: center
     .icon
         width: 25px
+    @include sm
+        justify-content: start
+.contacts
+    .info
+        padding: 5px
+    td
+        height: 30px

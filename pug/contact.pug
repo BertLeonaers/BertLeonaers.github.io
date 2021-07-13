@@ -3,7 +3,7 @@ extends template/main.pug
 
 block head
     meta(name="description", content="Ontdek hier de manieren om contact op te nemen met mij")
-    meta(name="keywords", content="Laurelle Nagels Contact mail instagram facebook locatie openingsuren")
+    meta(name="keywords", content="Laurelle Nagels Contact mail instagram facebook locatie openingsuren route")
 
 block content
     .section
@@ -14,7 +14,7 @@ block content
                 |Hieronder kan je alle gegevens vinden om mij te bereiken. Tot gauw!
 
     .section
-        .splitHorizontal
+        .splitHorizontal.contacts
             .left
                 h1 Contactgegevens
                 .info
@@ -31,6 +31,9 @@ block content
                     include icons/icon_instagram.pug
                     span 
                         a(href="https://www.instagram.com/laurelle_nailsandlashes") /laurelle_nailsandlashes
+                .info
+                    include icons/icon_marker.pug
+                    span Grote Heibergstraat 14<br/>2235 Hulshout
             .right
                 .officeHours
                     h1 Openingsuren
@@ -56,5 +59,3 @@ block content
                         tr
                             td Zondag
                             td Gesloten
-
-    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124138.20594655247!2d4.776721840167076!3d51.07665821471252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c15a9008eb729d%3A0x661dd5cc4f315632!2sGrote%20Heibergstraat%2012%2C%202235%20Hulshout!5e0!3m2!1snl!2sbe!4v1580057986670!5m2!1snl!2sbe" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="")
