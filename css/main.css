@@ -305,7 +305,6 @@ template {
   display: none; }
 
 .menuBar {
-  position: -webkit-sticky;
   position: sticky;
   top: 0px;
   height: 5em;
@@ -374,7 +373,6 @@ template {
   @media (min-width: 768px) {
     .navigation {
       font-size: 18px;
-      width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
       padding: 0px;
@@ -492,7 +490,6 @@ a {
       top: -20px;
       left: -30px;
       transform: rotate(-10deg);
-      width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
       font-family: "Satisfy", cursive;
