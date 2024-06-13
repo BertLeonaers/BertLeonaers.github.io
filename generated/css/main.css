@@ -479,7 +479,7 @@ a {
   @media (min-width: 768px) {
     .section {
       max-width: 768px;
-      margin: 0 auto; } }
+      margin: 20px auto; } }
   .section .pageExplanation {
     background-color: #ffe6e8;
     font-family: "Lato", sans-serif;
@@ -504,10 +504,12 @@ a {
       max-width: 300px;
       margin: 0 auto; }
       .section .imageAndExplanation .imageAndExplanationImage img, .section .imageAndExplanationHorizontal .imageAndExplanationImage img, .section .imageAndExplanationHorizontalReverse .imageAndExplanationImage img {
-        width: 100%;
+        max-width: 100%;
+        width: auto;
         border: 2px solid #000000;
         box-shadow: 5px 5px 3px #555;
-        border-radius: 25px; }
+        border-radius: 25px;
+        max-height: 350px; }
       .section .imageAndExplanation .imageAndExplanationImage a, .section .imageAndExplanationHorizontal .imageAndExplanationImage a, .section .imageAndExplanationHorizontalReverse .imageAndExplanationImage a {
         opacity: 1;
         transition: .3s ease-in-out; }
@@ -528,6 +530,10 @@ a {
       display: flex;
       flex-direction: column;
       justify-content: center; }
+      .section .imageAndExplanationHorizontal .imageAndExplanationImage .templateImage img, .section .imageAndExplanationHorizontal .imageAndExplanationExplanation .templateImage img, .section .imageAndExplanationHorizontalReverse .imageAndExplanationImage .templateImage img, .section .imageAndExplanationHorizontalReverse .imageAndExplanationExplanation .templateImage img {
+        width: auto;
+        max-width: 100%;
+        max-height: 250px; }
   @media (min-width: 576px) {
     .section .imageAndExplanationHorizontal {
       flex-direction: row; } }

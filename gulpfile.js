@@ -18,7 +18,7 @@ function defaultTask(cb) {
 }
 
 function pugToHTML(){
-  return src(["./pug/**/*.pug", "!./pug/template/*.pug", "!./pug/icons/*.pug"])
+  return src(["./pug/**/*.pug", "!./pug/template/*.pug", "!./pug/icons/*.pug", "!./pug/wimpers.pug"])
     .pipe(gulpPug({
       pretty: true,
       title: "Laurelle"
@@ -42,7 +42,7 @@ function js(){
 }
 
 function pictures(){
-  return src("./pug/pictures/*")
+  return src("./pug/pictures/**/*")
     .pipe(dest('./generated/pictures'));
 }
 

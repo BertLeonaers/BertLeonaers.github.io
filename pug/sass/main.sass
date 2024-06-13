@@ -34,7 +34,7 @@ a
     padding: 0px 30px
     @include md
         max-width: $screen-md-min
-        margin: 0 auto
+        margin: 20px auto
 
     .pageExplanation
         background-color: $accent-color
@@ -60,10 +60,12 @@ a
             max-width: 300px
             margin: 0 auto
             img
-                width: 100%
+                max-width: 100%
+                width: auto
                 border: 2px solid #000000
                 box-shadow: 5px 5px 3px #555
                 border-radius: 25px
+                max-height: 350px
             a
                 opacity: 1
                 transition: .3s ease-in-out
@@ -87,6 +89,11 @@ a
             display: flex
             flex-direction: column
             justify-content: center
+            .templateImage 
+                img
+                    width: auto
+                    max-width: 100%
+                    max-height: 250px
 
     .imageAndExplanationHorizontal
         @include sm
